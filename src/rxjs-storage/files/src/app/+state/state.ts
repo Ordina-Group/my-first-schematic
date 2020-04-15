@@ -1,4 +1,4 @@
-import { Model } from './model';
+import { Model } from './../domain/model';
 
 export interface State {
   list: Model[];
