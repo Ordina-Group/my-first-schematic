@@ -1,25 +1,25 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { pluck } from 'rxjs/operators';
-import { initialState, State } from './state';
+import { initialState, <%= classify(name) %>State } from './state';
 
-type StorageChange = ((state: State) => State) | Partial<State>;
+type StorageChange = ((state: <%= classify(name) %>State) => <%= classify(name) %>State) | Partial<<%= classify(name) %>State>;
 
 @Injectable({
   providedIn: 'root'
 })
-export class StorageService {
-  private store$ = new BehaviorSubject<State>(initialState);
+export class <%= classify(name) %>StorageService {
+  private store$ = new BehaviorSubject<<%= classify(name) %>State>(initialState);
 
-  get state(): Observable<State> {
+  get state(): Observable<<%= classify(name) %>State> {
     return this.store$.asObservable();
   }
 
-  getCurrentState(): State {
+  getCurrentState(): <%= classify(name) %>State {
     return this.store$.getValue();
   }
 
-  pluckState<T extends keyof State>(prop: T): Observable<State[T]> {
+  pluckState<T extends keyof <%= classify(name) %>State>(prop: T): Observable<<%= classify(name) %>State[T]> {
     return this.state.pipe(
       pluck(prop)
     );

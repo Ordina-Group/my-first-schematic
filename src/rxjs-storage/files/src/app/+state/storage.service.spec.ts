@@ -1,23 +1,23 @@
 import { TestBed } from '@angular/core/testing';
 import { TestScheduler } from 'rxjs/testing';
-import { initialState, State } from './state';
-import { StorageService } from './storage.service';
+import { initialState, <%= classify(name) %>State } from './state';
+import { <%= classify(name) %>StorageService } from './storage.service';
 
-const stateA: State = {
+const stateA: <%= classify(name) %>State = {
   list: [{id: '1', name: 'prop1'}, {id: '2', name: 'prop2'}],
   selectedId: '1'
 };
-const stateB: State = {
+const stateB: <%= classify(name) %>State = {
   list: [{id: '1', name: 'prop1'}, {id: '2', name: 'prop2'}, {id: '3', name: 'prop3'}],
   selectedId: '2'
 };
 
-describe('StorageService', () => {
-  let service: StorageService;
+describe('<%= classify(name) %>StorageService', () => {
+  let service: <%= classify(name) %>StorageService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(StorageService);
+    service = TestBed.inject(<%= classify(name) %>StorageService);
   });
 
   it('should create', () => {

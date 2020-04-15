@@ -1,11 +1,11 @@
-import { Model } from './../domain/model';
+import { <%= classify(name) %> } from './../domain/model';
 
-export interface State {
-  list: Model[];
-  selectedId: string | number | null;
+export interface <%= classify(name) %>State {
+  list: <%= classify(name) %>[];
+  selectedId: string | number | null;
 }
 
-export const initialState: State = {
+export const initialState: <%= classify(name) %>State = {
   list: [],
   selectedId: null
 };
