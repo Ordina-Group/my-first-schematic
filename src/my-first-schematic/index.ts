@@ -5,6 +5,7 @@ import { Rule, SchematicContext, Tree } from '@angular-devkit/schematics';
 // per file.
 export function myFirstSchematic(_options: any): Rule {
   return (tree: Tree, _context: SchematicContext) => {
+    console.log(`Hello ${_options.name || 'FamiliarNameMissing'}!`);
     return tree;
   };
 }
