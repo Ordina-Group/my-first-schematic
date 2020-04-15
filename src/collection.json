@@ -4,6 +4,10 @@
     "my-first-schematic": {
       "description": "A blank schematic.",
       "factory": "./my-first-schematic/index#myFirstSchematic"
+    },
+    "rxjs-storage": {
+      "description": "A blank schematic.",
+      "factory": "./rxjs-storage/index#rxjsStorage"
     }
   }
 }
