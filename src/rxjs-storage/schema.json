@@ -1,0 +1,28 @@
+{
+  "$schema": "http://json-schema.org/schema",
+  "id": "RxJSStorageSchematics",
+  "title": "RxJS Storage Options Schema",
+  "type": "object",
+  "description": "Adds an RxJS storage to your applictation.",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "The name of the entity in the storage.",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      },
+      "x-prompt": "What is the name of the entity in the storage?"
+    },
+    "project": {
+      "type": "string",
+      "description": "Generate in specific Angular CLI workspace project"
+    },
+    "props": {
+      "type": "string",
+      "description": "Names of props for the entity",
+      "default": ""
+    }
+  },
+  "required": ["name"]
+}
