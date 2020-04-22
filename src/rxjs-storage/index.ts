@@ -3,6 +3,7 @@ import { apply, mergeWith, Rule, template, url } from '@angular-devkit/schematic
 
 interface Schema {
   name: string;
+  props: string;
 }
 
 // You don't have to export the function as default. You can also have more than one rule factory
@@ -16,7 +17,10 @@ function copyFiles(_options: Schema): Rule {
   const sourceParameterizedTemplates = apply(sourceTemplates, [
     template({
       ..._options,
-      ...strings
+      ...strings,
+      props: _options.props.split(',')
+      .filter((prop: string) => !!prop.trim())
+      .map((prop: string) => prop.split(':').map(value => value.trim()))
     })
   ]);
   return mergeWith(sourceParameterizedTemplates);
