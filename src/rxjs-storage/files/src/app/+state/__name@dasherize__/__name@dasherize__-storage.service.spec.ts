@@ -1,7 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 import { TestScheduler } from 'rxjs/testing';
-import { initialState, <%= classify(name) %>State } from './state';
-import { <%= classify(name) %>StorageService } from './storage.service';
+import { initialState, <%= classify(name) %>State } from './<%= dasherize(name) %>-state';
+import { <%= classify(name) %>StorageService } from './<%= dasherize(name) %>-storage.service';
 
 const stateA: <%= classify(name) %>State = {
   list: [{id: '1', name: 'prop1'}, {id: '2', name: 'prop2'}],

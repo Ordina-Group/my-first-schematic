@@ -1,4 +1,4 @@
-import { <%= classify(name) %> } from './../domain/model';
+import { <%= classify(name) %> } from './../../domain/<%= dasherize(name) %>';
 
 export interface <%= classify(name) %>State {
   list: <%= classify(name) %>[];

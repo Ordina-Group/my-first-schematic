@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
 import { pluck } from 'rxjs/operators';
-import { initialState, <%= classify(name) %>State } from './state';
+import { initialState, <%= classify(name) %>State } from './<%= dasherize(name) %>-state';
 
 type StorageChange = ((state: <%= classify(name) %>State) => <%= classify(name) %>State) | Partial<<%= classify(name) %>State>;
 
