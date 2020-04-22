@@ -7,7 +7,8 @@
     },
     "rxjs-storage": {
       "description": "A blank schematic.",
-      "factory": "./rxjs-storage/index#rxjsStorage"
+      "factory": "./rxjs-storage/index#rxjsStorage",
+      "schema": "./rxjs-storage/schema.json"
     }
   }
 }
