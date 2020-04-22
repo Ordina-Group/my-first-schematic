@@ -11,7 +11,8 @@
       "$default": {
         "$source": "argv",
         "index": 0
-      }
+      },
+      "x-prompt": "What is the name of the entity in the storage?"
     }
   },
   "required": ["name"]
